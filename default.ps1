@@ -51,9 +51,9 @@ task ILRepack -depends Compile {
 			# Not including $output_directory\Autofac.dll as it procuces a reference error: 
 			#	Mono.Cecil.AssemblyResolutionException: Failed to resolve assembly: 'System.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null'
 			# Seems to be th eresult of Autofac being a portable assembly
-			if ("$_" -ne "Autofac.dll") {
+			#if ("$_" -ne "Autofac.dll") {
 				$input_dlls = "$input_dlls $output_directory\$_"
-			}
+			#}
 	}
 
 	"input_dlls = $input_dlls"
